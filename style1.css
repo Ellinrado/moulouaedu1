@@ -1,0 +1,231 @@
+/* =====================================================
+   LES MATHÉMATIQUES POUR TOUS
+   Style académique — inspiré des pages de couverture
+   de revues scientifiques et des manuels scolaires.
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --paper:      #FAFAF7;
+  --paper-alt:  #F1EEE4;
+  --ink:        #1E2A38;
+  --ink-soft:   #5B6B7A;
+  --accent:     #7A2E2E;   /* bordeaux, seule touche de couleur */
+  --rule:       #D8D3C4;
+  --rule-dark:  #1E2A38;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Inter", Arial, sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ================= HEADER / MASTHEAD ================= */
+header{
+  background:var(--paper);
+  color:var(--ink);
+  padding:56px 20px 40px;
+  text-align:center;
+  border-top:6px solid var(--rule-dark);
+  border-bottom:1px solid var(--rule-dark);
+  position:relative;
+}
+
+header::before{
+  content:"Manuel numérique";
+  display:block;
+  font-family:"Inter", sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+
+header h1{
+  font-family:"Lora", Georgia, serif;
+  font-weight:700;
+  font-size:44px;
+  letter-spacing:0.3px;
+  margin-bottom:14px;
+}
+
+header p{
+  font-family:"Inter", sans-serif;
+  font-size:14px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+/* petit filet double sous le sous-titre, esprit "revue" */
+header p::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:var(--accent);
+  margin:18px auto 0;
+}
+
+/* ================= CONTENU ================= */
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:70px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+
+/* ================= CARTES / CHAPITRES ================= */
+.card{
+  background:var(--paper);
+  padding:40px 32px 34px;
+  position:relative;
+  overflow:hidden;
+  transition:background .25s ease;
+}
+
+.card:hover{
+  background:var(--paper-alt);
+}
+
+/* Une seule image de fond, appliquée aux trois cartes,
+   avec un voile clair par-dessus pour garder le texte lisible.
+   Remplacez le chemin par votre propre image si besoin. */
+.card{
+  background-image:
+    linear-gradient(rgba(250,250,247,0.72), rgba(250,250,247,0.72)),
+    url("images/college1.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.card:hover{
+  background-image:
+    linear-gradient(rgba(241,238,228,0.65), rgba(241,238,228,0.65)),
+    url("images/maths.svg");
+}
+
+.card h2{
+  font-family:"Lora", Georgia, serif;
+  font-weight:600;
+  font-size:23px;
+  color:var(--ink);
+  text-align:left;
+  margin-bottom:8px;
+  position:relative;
+  z-index:1;
+}
+
+/* petite étiquette "Chapitre I" sous chaque titre */
+.card p.chapitre-label{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+}
+
+.card ul{
+  list-style:none;
+  position:relative;
+  z-index:1;
+}
+
+.card li{
+  margin:0;
+  border-bottom:1px solid var(--rule);
+}
+
+.card li:last-child{
+  border-bottom:none;
+}
+
+.card a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  text-decoration:none;
+  color:var(--ink);
+  font-family:"Inter", sans-serif;
+  font-weight:500;
+  font-size:15px;
+  padding:14px 4px;
+  transition:color .2s ease, padding-left .2s ease;
+}
+
+.card a::after{
+  content:"→";
+  color:var(--accent);
+  font-size:16px;
+  opacity:0;
+  transition:opacity .2s ease;
+}
+
+.card a:hover{
+  color:var(--accent);
+  padding-left:8px;
+}
+
+.card a:hover::after{
+  opacity:1;
+}
+
+.card a:focus-visible,
+#smart-search:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+/* ================= FOOTER / COLOPHON ================= */
+footer{
+  margin-top:40px;
+  background:var(--paper);
+  color:var(--ink-soft);
+  text-align:center;
+  padding:30px 20px;
+  border-top:1px solid var(--rule-dark);
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+/* ================= ACCESSIBILITÉ & CONFORT ================= */
+@media (prefers-reduced-motion: reduce){
+  *{
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:600px){
+  header h1{ font-size:32px; }
+  .container{ margin:40px auto; }
+}
+
+/* ================= IMPRESSION ================= */
+@media print{
+  header{ border:none; }
+  .card{ background-image:none !important; }
+  .card a::after{ display:none; }
+}
