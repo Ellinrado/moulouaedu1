@@ -209,6 +209,25 @@ footer{
   letter-spacing:1px;
 }
 
+/* ================= COMPTEUR DE VISITEURS ================= */
+.compteur{
+  margin-top:16px;
+  font-family:"Inter", sans-serif;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.compteur img{
+  vertical-align:middle;
+  filter:grayscale(0.2);
+}
+
 /* ================= ACCESSIBILITÉ & CONFORT ================= */
 @media (prefers-reduced-motion: reduce){
   *{
