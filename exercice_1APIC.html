@@ -59,49 +59,38 @@
 
 <script src="quiz.js"></script>
 <script>
-  // Chapitre 1 — Les nombres entiers relatifs (30 questions, du plus facile au plus difficile)
+  // Chapitre 1 — Les nombres entiers relatifs (30 questions)
   renderQuiz("quiz-ch1", [
-    // --- Niveau 1 : reconnaître et lire les nombres relatifs ---
-    { q: "1. Un nombre relatif est composé :", options: ["D'un signe et d'une distance à zéro", "Uniquement de chiffres", "D'une fraction", "D'une lettre"], correct: 0 },
-    { q: "2. Le nombre −5 est :", options: ["Positif", "Négatif", "Nul", "Impossible"], correct: 1 },
-    { q: "3. Le nombre +8 est :", options: ["Positif", "Négatif", "Nul", "Décimal"], correct: 0 },
-    { q: "4. Quel est l'opposé de 6 ?", options: ["6", "−6", "0", "1/6"], correct: 1 },
-    { q: "5. Quel est l'opposé de −9 ?", options: ["−9", "0", "9", "1/9"], correct: 2 },
-
-    // --- Niveau 2 : comparaison ---
-    { q: "6. Quel nombre est le plus grand : −3 ou 2 ?", options: ["−3", "2", "Ils sont égaux"], correct: 1 },
-    { q: "7. Quel nombre est le plus petit : −8 ou −2 ?", options: ["−8", "−2", "Ils sont égaux"], correct: 0 },
-    { q: "8. Range dans l'ordre croissant : −4, 3, −1, 0", options: ["−4, −1, 0, 3", "3, 0, −1, −4", "−1, −4, 0, 3", "0, −1, −4, 3"], correct: 0 },
-    { q: "9. Range dans l'ordre décroissant : 5, −2, −7, 1", options: ["−7, −2, 1, 5", "5, 1, −2, −7", "5, −2, 1, −7", "1, 5, −2, −7"], correct: 1 },
-    { q: "10. Tous les nombres négatifs sont :", options: ["Plus grands que tous les positifs", "Plus petits que tous les positifs", "Égaux à zéro", "Impossibles à comparer"], correct: 1 },
-
-    // --- Niveau 3 : distance à zéro / valeur absolue ---
-    { q: "11. La distance à zéro de −7 est :", options: ["−7", "7", "0", "14"], correct: 1 },
-    { q: "12. La distance à zéro de +4 est :", options: ["−4", "4", "0", "8"], correct: 1 },
-    { q: "13. Deux nombres opposés ont :", options: ["La même distance à zéro", "Des distances différentes", "Toujours une distance de 0", "Le même signe"], correct: 0 },
-    { q: "14. La distance entre −3 et 2 sur une droite graduée est :", options: ["1", "5", "6", "−5"], correct: 1 },
-    { q: "15. La distance entre −6 et −2 sur une droite graduée est :", options: ["4", "8", "−4", "2"], correct: 0 },
-
-    // --- Niveau 4 : addition et soustraction ---
-    { q: "16. Que vaut (+3) + (+5) ?", options: ["8", "−8", "2", "−2"], correct: 0 },
-    { q: "17. Que vaut (−3) + (−5) ?", options: ["8", "−8", "2", "−2"], correct: 1 },
-    { q: "18. Que vaut (−7) + (+10) ?", options: ["−17", "3", "17", "−3"], correct: 1 },
-    { q: "19. Que vaut (+4) + (−9) ?", options: ["5", "−5", "13", "−13"], correct: 1 },
-    { q: "20. Que vaut (−6) − (+2) ?", options: ["−4", "4", "−8", "8"], correct: 2 },
-    { q: "21. Que vaut (+5) − (−3) ?", options: ["2", "−2", "8", "−8"], correct: 2 },
-    { q: "22. Que vaut (−4) − (−4) ?", options: ["−8", "0", "8", "−4"], correct: 1 },
-
-    // --- Niveau 5 : multiplication et division ---
-    { q: "23. Que vaut (−4) × (−3) ?", options: ["−12", "12", "7", "−7"], correct: 1 },
-    { q: "24. Que vaut (−6) × (+2) ?", options: ["12", "−12", "8", "−8"], correct: 1 },
-    { q: "25. Que vaut (+7) × (−1) ?", options: ["7", "−7", "1", "−1"], correct: 1 },
-    { q: "26. Que vaut (−20) ÷ (−4) ?", options: ["−5", "5", "16", "−16"], correct: 1 },
-    { q: "27. Que vaut (+18) ÷ (−3) ?", options: ["6", "−6", "15", "−15"], correct: 1 },
-
-    // --- Niveau 6 : calculs combinés (plus difficile) ---
-    { q: "28. Que vaut (−3) + (+5) − (−2) ?", options: ["0", "4", "10", "−10"], correct: 1 },
-    { q: "29. Que vaut (−2) × (+3) + (−4) ?", options: ["2", "−10", "−2", "10"], correct: 2 },
-    { q: "30. Que vaut [(−5) + (+2)] × (−3) ?", options: ["9", "−9", "21", "−21"], correct: 0 }
+    { q: "Un nombre relatif est composé :", options: ["D'un signe et d'une distance à zéro", "Uniquement de chiffres", "D'une fraction", "D'une lettre"], correct: 0 },
+    { q: "Le nombre −5 est :", options: ["Positif", "Négatif", "Nul", "Impossible"], correct: 1 },
+    { q: "Le nombre +8 est :", options: ["Positif", "Négatif", "Nul", "Décimal"], correct: 0 },
+    { q: "Quel est l'opposé de 6 ?", options: ["6", "−6", "0", "1/6"], correct: 1 },
+    { q: "Quel est l'opposé de −9 ?", options: ["−9", "0", "9", "1/9"], correct: 2 },
+    { q: "Quel nombre est le plus grand : −3 ou 2 ?", options: ["−3", "2", "Ils sont égaux"], correct: 1 },
+    { q: "Quel nombre est le plus petit : −8 ou −2 ?", options: ["−8", "−2", "Ils sont égaux"], correct: 0 },
+    { q: "Range dans l'ordre croissant : −4, 3, −1, 0", options: ["−4, −1, 0, 3", "3, 0, −1, −4", "−1, −4, 0, 3", "0, −1, −4, 3"], correct: 0 },
+    { q: "Range dans l'ordre décroissant : 5, −2, −7, 1", options: ["−7, −2, 1, 5", "5, 1, −2, −7", "5, −2, 1, −7", "1, 5, −2, −7"], correct: 1 },
+    { q: "Tous les nombres négatifs sont :", options: ["Plus grands que tous les positifs", "Plus petits que tous les positifs", "Égaux à zéro", "Impossibles à comparer"], correct: 1 },
+    { q: "La distance à zéro de −7 est :", options: ["−7", "7", "0", "14"], correct: 1 },
+    { q: "La distance à zéro de +4 est :", options: ["−4", "4", "0", "8"], correct: 1 },
+    { q: "Deux nombres opposés ont :", options: ["La même distance à zéro", "Des distances différentes", "Toujours une distance de 0", "Le même signe"], correct: 0 },
+    { q: "La distance entre −3 et 2 sur une droite graduée est :", options: ["1", "5", "6", "−5"], correct: 1 },
+    { q: "La distance entre −6 et −2 sur une droite graduée est :", options: ["4", "8", "−4", "2"], correct: 0 },
+    { q: "Que vaut (+3) + (+5) ?", options: ["8", "−8", "2", "−2"], correct: 0 },
+    { q: "Que vaut (−3) + (−5) ?", options: ["8", "−8", "2", "−2"], correct: 1 },
+    { q: "Que vaut (−7) + (+10) ?", options: ["−17", "3", "17", "−3"], correct: 1 },
+    { q: "Que vaut (+4) + (−9) ?", options: ["5", "−5", "13", "−13"], correct: 1 },
+    { q: "Que vaut (−6) − (+2) ?", options: ["−4", "4", "−8", "8"], correct: 2 },
+    { q: "Que vaut (+5) − (−3) ?", options: ["2", "−2", "8", "−8"], correct: 2 },
+    { q: "Que vaut (−4) − (−4) ?", options: ["−8", "0", "8", "−4"], correct: 1 },
+    { q: "Que vaut (−4) × (−3) ?", options: ["−12", "12", "7", "−7"], correct: 1 },
+    { q: "Que vaut (−6) × (+2) ?", options: ["12", "−12", "8", "−8"], correct: 1 },
+    { q: "Que vaut (+7) × (−1) ?", options: ["7", "−7", "1", "−1"], correct: 1 },
+    { q: "Que vaut (−20) ÷ (−4) ?", options: ["−5", "5", "16", "−16"], correct: 1 },
+    { q: "Que vaut (+18) ÷ (−3) ?", options: ["6", "−6", "15", "−15"], correct: 1 },
+    { q: "Que vaut (−3) + (+5) − (−2) ?", options: ["0", "4", "10", "−10"], correct: 1 },
+    { q: "Que vaut (−2) × (+3) + (−4) ?", options: ["2", "−10", "−2", "10"], correct: 2 },
+    { q: "Que vaut [(−5) + (+2)] × (−3) ?", options: ["9", "−9", "21", "−21"], correct: 0 }
   ]);
 
   // Chapitre 2 — Les fractions
