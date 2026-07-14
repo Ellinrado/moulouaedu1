@@ -1,108 +1,556 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exercices 1APIC</title>
-<link rel="stylesheet" href="style1.css">
-</head>
-<body>
-<header>
-<h1>Exercices de Mathématiques - 1APIC</h1>
-</header>
+/* =====================================================
+   LES MATHÉMATIQUES POUR TOUS
+   Style académique — inspiré des pages de couverture
+   de revues scientifiques et des manuels scolaires.
+   ===================================================== */
 
-<div class="container-full">
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
 
-  <details class="chapter" open>
-    <summary>📄 Chapitre 1 : Les nombres entiers</summary>
-    <div class="chapter-body">
-      <div id="quiz-ch1" class="quiz"></div>
-      <a class="download" href="pdf/college/1apic/chapitre1.pdf" target="_blank">📥 Télécharger le cours complet (PDF)</a>
-    </div>
-  </details>
+:root{
+  --paper:      #FAFAF7;
+  --paper-alt:  #F1EEE4;
+  --ink:        #1E2A38;
+  --ink-soft:   #5B6B7A;
+  --accent:     #7A2E2E;
+  --rule:       #D8D3C4;
+  --rule-dark:  #1E2A38;
+}
 
-  <details class="chapter">
-    <summary>📄 Chapitre 2 : Les fractions</summary>
-    <div class="chapter-body">
-      <div id="quiz-ch2" class="quiz"></div>
-      <a class="download" href="pdf/college/1apic/chapitre2.pdf" target="_blank">📥 Télécharger le cours complet (PDF)</a>
-    </div>
-  </details>
+[data-theme="dark"]{
+  --paper:      #14181F;
+  --paper-alt:  #1C222C;
+  --ink:        #EDE9E0;
+  --ink-soft:   #9BA6B2;
+  --accent:     #C97B7B;
+  --rule:       #2B323D;
+  --rule-dark:  #EDE9E0;
+}
 
-  <details class="chapter">
-    <summary>📄 Chapitre 3 : Les équations</summary>
-    <div class="chapter-body">
-      <div id="quiz-ch3" class="quiz"></div>
-      <a class="download" href="pdf/college/1apic/chapitre3.pdf" target="_blank">📥 Télécharger le cours complet (PDF)</a>
-    </div>
-  </details>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-  <details class="chapter">
-    <summary>📄 Chapitre 4 : Géométrie</summary>
-    <div class="chapter-body">
-      <div id="quiz-ch4" class="quiz"></div>
-      <a class="download" href="pdf/college/1apic/chapitre4.pdf" target="_blank">📥 Télécharger le cours complet (PDF)</a>
-    </div>
-  </details>
+html{
+  scroll-behavior:smooth;
+}
 
-  <details class="chapter">
-    <summary>📄 Chapitre 5 : Statistiques</summary>
-    <div class="chapter-body">
-      <div id="quiz-ch5" class="quiz"></div>
-      <a class="download" href="pdf/college/1apic/chapitre5.pdf" target="_blank">📥 Télécharger le cours complet (PDF)</a>
-    </div>
-  </details>
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Inter", Arial, sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  transition:background .25s ease, color .25s ease;
+}
 
-  <br>
-  <a href="cours_college.html">⬅ Retour aux niveaux</a>
-</div>
+/* ================= HEADER / MASTHEAD ================= */
+header{
+  background:var(--paper);
+  color:var(--ink);
+  padding:56px 20px 40px;
+  text-align:center;
+  border-top:6px solid var(--rule-dark);
+  border-bottom:1px solid var(--rule-dark);
+  position:relative;
+}
 
-<script src="quiz.js"></script>
-<script>
-  // Chapitre 1 — Les nombres entiers
-  renderQuiz("quiz-ch1", [
-    { q: "Que vaut 7 + 5 ?", options: ["11", "12", "13", "10"], correct: 1 },
-    { q: "Que vaut 9 × 3 ?", options: ["27", "18", "36", "12"], correct: 0 },
-    { q: "Quel est le plus grand nombre : 245 ou 254 ?", options: ["245", "254", "Ils sont égaux"], correct: 1 },
-    { q: "Que vaut 100 − 37 ?", options: ["63", "73", "67", "53"], correct: 0 },
-    { q: "Que vaut 48 ÷ 6 ?", options: ["6", "7", "8", "9"], correct: 2 }
-  ]);
+header::before{
+  content:"Manuel numérique";
+  display:block;
+  font-family:"Inter", sans-serif;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:18px;
+}
 
-  // Chapitre 2 — Les fractions
-  renderQuiz("quiz-ch2", [
-    { q: "Que vaut 1/2 + 1/4 ?", options: ["2/6", "3/4", "1/6", "2/4"], correct: 1 },
-    { q: "Simplifie 6/8 :", options: ["3/4", "2/3", "6/8", "4/3"], correct: 0 },
-    { q: "Que vaut 3/5 en décimal ?", options: ["0,6", "0,35", "0,53", "1,6"], correct: 0 },
-    { q: "1/3 est équivalent à :", options: ["2/6", "3/9", "4/12", "toutes ces réponses"], correct: 3 },
-    { q: "Que vaut 5/6 − 1/6 ?", options: ["4/6", "2/3", "4/6 = 2/3", "6/6"], correct: 2 }
-  ]);
+header h1{
+  font-family:"Lora", Georgia, serif;
+  font-weight:700;
+  font-size:44px;
+  letter-spacing:0.3px;
+  margin-bottom:14px;
+}
 
-  // Chapitre 3 — Les équations
-  renderQuiz("quiz-ch3", [
-    { q: "Résous : x + 3 = 8", options: ["x = 4", "x = 5", "x = 11", "x = 3"], correct: 1 },
-    { q: "Résous : 2x = 10", options: ["x = 20", "x = 8", "x = 5", "x = 12"], correct: 2 },
-    { q: "Résous : x − 4 = 6", options: ["x = 2", "x = 10", "x = 24", "x = 4"], correct: 1 },
-    { q: "Résous : 3x + 1 = 10", options: ["x = 3", "x = 4", "x = 9", "x = 11"], correct: 0 },
-    { q: "Résous : x/2 = 7", options: ["x = 3,5", "x = 9", "x = 14", "x = 5"], correct: 2 }
-  ]);
+header p{
+  font-family:"Inter", sans-serif;
+  font-size:14px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
 
-  // Chapitre 4 — Géométrie
-  renderQuiz("quiz-ch4", [
-    { q: "Combien de côtés a un triangle ?", options: ["2", "3", "4", "5"], correct: 1 },
-    { q: "Un carré a des angles de :", options: ["45°", "60°", "90°", "180°"], correct: 2 },
-    { q: "Le périmètre d'un carré de côté 5 cm est :", options: ["10 cm", "15 cm", "20 cm", "25 cm"], correct: 2 },
-    { q: "L'aire d'un rectangle 4 cm × 3 cm est :", options: ["7 cm²", "12 cm²", "14 cm²", "10 cm²"], correct: 1 },
-    { q: "Un angle droit mesure :", options: ["45°", "90°", "180°", "360°"], correct: 1 }
-  ]);
+header p::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:var(--accent);
+  margin:18px auto 0;
+}
 
-  // Chapitre 5 — Statistiques
-  renderQuiz("quiz-ch5", [
-    { q: "La moyenne de 4, 6 et 8 est :", options: ["5", "6", "7", "8"], correct: 1 },
-    { q: "Dans une série de notes, le maximum est :", options: ["La plus petite note", "La note du milieu", "La plus grande note", "La moyenne"], correct: 2 },
-    { q: "Un diagramme circulaire sert à représenter :", options: ["Des proportions", "Des équations", "Des angles droits", "Des fractions uniquement"], correct: 0 },
-    { q: "Si 10 élèves sur 20 ont eu 15/20, quel pourcentage cela représente ?", options: ["25%", "50%", "75%", "10%"], correct: 1 },
-    { q: "L'étendue d'une série est :", options: ["La moyenne", "Max − Min", "Le nombre de valeurs", "La médiane"], correct: 1 }
-  ]);
-</script>
-</body>
-</html>
+/* ================= BOUTON MODE SOMBRE ================= */
+#theme-toggle{
+  position:absolute;
+  top:24px;
+  right:24px;
+  background:none;
+  border:1px solid var(--rule-dark);
+  color:var(--ink);
+  font-family:"Inter", sans-serif;
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  padding:8px 14px;
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease;
+}
+
+#theme-toggle:hover{
+  background:var(--accent);
+  color:var(--paper);
+  border-color:var(--accent);
+}
+
+/* ================= FIL D'ARIANE / RETOUR ================= */
+.nav-back{
+  width:90%;
+  max-width:1100px;
+  margin:28px auto 0;
+  font-family:"Inter", sans-serif;
+  font-size:13px;
+  letter-spacing:0.5px;
+}
+
+.nav-back a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:2px;
+  transition:color .2s ease, border-color .2s ease;
+}
+
+.nav-back a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+
+/* ================= BARRE DE RECHERCHE ================= */
+.search-wrap{
+  width:90%;
+  max-width:600px;
+  margin:36px auto 0;
+}
+
+#smart-search{
+  width:100%;
+  padding:14px 18px;
+  font-family:"Inter", sans-serif;
+  font-size:14px;
+  background:var(--paper);
+  color:var(--ink);
+  border:1px solid var(--rule-dark);
+  outline:none;
+  transition:border-color .2s ease;
+}
+
+#smart-search::placeholder{
+  color:var(--ink-soft);
+}
+
+#smart-search:focus{
+  border-color:var(--accent);
+}
+
+/* ================= CONTENU ================= */
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:70px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+
+/* ================= CARTES / CHAPITRES ================= */
+.card{
+  background:var(--paper);
+  padding:40px 32px 34px;
+  position:relative;
+  overflow:hidden;
+  transition:background .25s ease;
+}
+
+.card:hover{
+  background:var(--paper-alt);
+}
+
+.card{
+  background-image:
+    linear-gradient(rgba(250,250,247,0.72), rgba(250,250,247,0.72)),
+    url("images/college1.png");
+  background-size:cover;
+  background-position:center;
+}
+
+[data-theme="dark"] .card{
+  background-image:
+    linear-gradient(rgba(20,24,31,0.82), rgba(20,24,31,0.82)),
+    url("images/college1.png");
+}
+
+.card:hover{
+  background-image:
+    linear-gradient(rgba(241,238,228,0.65), rgba(241,238,228,0.65)),
+    url("images/maths.svg");
+}
+
+[data-theme="dark"] .card:hover{
+  background-image:
+    linear-gradient(rgba(28,34,44,0.85), rgba(28,34,44,0.85)),
+    url("images/maths.svg");
+}
+
+.card h2{
+  font-family:"Lora", Georgia, serif;
+  font-weight:600;
+  font-size:23px;
+  color:var(--ink);
+  text-align:left;
+  margin-bottom:8px;
+  position:relative;
+  z-index:1;
+}
+
+.card p.chapitre-label{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:22px;
+}
+
+.card ul{
+  list-style:none;
+  position:relative;
+  z-index:1;
+}
+
+.card li{
+  margin:0;
+  border-bottom:1px solid var(--rule);
+}
+
+.card li:last-child{
+  border-bottom:none;
+}
+
+.card a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  text-decoration:none;
+  color:var(--ink);
+  font-family:"Inter", sans-serif;
+  font-weight:500;
+  font-size:15px;
+  padding:14px 4px;
+  transition:color .2s ease, padding-left .2s ease;
+}
+
+.card a::after{
+  content:"→";
+  color:var(--accent);
+  font-size:16px;
+  opacity:0;
+  transition:opacity .2s ease;
+}
+
+.card a:hover{
+  color:var(--accent);
+  padding-left:8px;
+}
+
+.card a:hover::after{
+  opacity:1;
+}
+
+.card a:focus-visible,
+#smart-search:focus-visible,
+#theme-toggle:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+/* ================= PAGE DE CHAPITRE (sous-pages) ================= */
+main.page{
+  width:90%;
+  max-width:800px;
+  margin:60px auto 80px;
+}
+
+main.page h2{
+  font-family:"Lora", Georgia, serif;
+  font-weight:700;
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+main.page p.chapitre-label{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:30px;
+}
+
+main.page .item{
+  border:1px solid var(--rule);
+  padding:22px 26px;
+  margin-bottom:14px;
+  background:var(--paper-alt);
+}
+
+main.page .item h3{
+  font-family:"Lora", Georgia, serif;
+  font-size:17px;
+  margin-bottom:6px;
+}
+
+main.page .item p{
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+}
+
+main.page .item a.download{
+  display:inline-block;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid var(--accent);
+}
+
+/* ================= CHAPITRES DÉPLIABLES (accordéon) ================= */
+.container-full{
+  width:90%;
+  max-width:800px;
+  margin:60px auto 80px;
+}
+
+.chapter{
+  border:1px solid var(--rule);
+  margin-bottom:14px;
+  background:var(--paper-alt);
+}
+
+.chapter summary{
+  cursor:pointer;
+  list-style:none;
+  padding:18px 24px;
+  font-family:"Lora", Georgia, serif;
+  font-size:17px;
+  font-weight:600;
+  color:var(--ink);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.chapter summary::-webkit-details-marker{
+  display:none;
+}
+
+.chapter summary::after{
+  content:"+";
+  font-size:20px;
+  color:var(--accent);
+  transition:transform .2s ease;
+}
+
+.chapter[open] summary::after{
+  content:"–";
+}
+
+.chapter summary:hover{
+  color:var(--accent);
+}
+
+.chapter-body{
+  padding:0 24px 24px;
+  border-top:1px solid var(--rule);
+}
+
+.chapter-body a.download{
+  display:inline-block;
+  margin-top:18px;
+  font-family:"Inter", sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  color:var(--accent);
+  text-decoration:none;
+  border-bottom:1px solid var(--accent);
+}
+
+/* ================= QUIZ INTERACTIF ================= */
+.quiz{
+  margin-top:18px;
+}
+
+.quiz-question{
+  margin-bottom:22px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--rule);
+}
+
+.quiz-question:last-of-type{
+  border-bottom:none;
+}
+
+.quiz-q-text{
+  font-family:"Lora", Georgia, serif;
+  font-size:15px;
+  margin-bottom:10px;
+  color:var(--ink);
+}
+
+.quiz-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.quiz-option{
+  font-family:"Inter", sans-serif;
+  font-size:13px;
+  padding:9px 14px;
+  background:var(--paper);
+  color:var(--ink);
+  border:1px solid var(--rule-dark);
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease;
+}
+
+.quiz-option:hover{
+  background:var(--paper-alt);
+}
+
+.quiz-option.selected{
+  background:var(--accent);
+  color:var(--paper);
+  border-color:var(--accent);
+}
+
+.quiz-feedback{
+  margin-top:8px;
+  font-size:13px;
+  min-height:18px;
+}
+
+.quiz-feedback.correct{
+  color:#2E7D32;
+}
+
+.quiz-feedback.incorrect{
+  color:var(--accent);
+}
+
+.quiz-submit{
+  margin-top:8px;
+  font-family:"Inter", sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  padding:12px 22px;
+  background:var(--ink);
+  color:var(--paper);
+  border:none;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+
+.quiz-submit:hover{
+  background:var(--accent);
+}
+
+.quiz-score{
+  margin-top:14px;
+  font-family:"Lora", Georgia, serif;
+  font-size:17px;
+  font-weight:600;
+  opacity:0;
+  height:0;
+  overflow:hidden;
+  transition:opacity .3s ease;
+}
+
+.quiz-score.visible{
+  opacity:1;
+  height:auto;
+}
+
+/* ================= FOOTER / COLOPHON ================= */
+footer{
+  margin-top:40px;
+  background:var(--paper);
+  color:var(--ink-soft);
+  text-align:center;
+  padding:30px 20px;
+  border-top:1px solid var(--rule-dark);
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+/* ================= COMPTEUR DE VISITEURS ================= */
+.compteur{
+  margin-top:16px;
+  font-family:"Inter", sans-serif;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.compteur img{
+  vertical-align:middle;
+  filter:grayscale(0.2);
+}
+
+/* ================= ACCESSIBILITÉ & CONFORT ================= */
+@media (prefers-reduced-motion: reduce){
+  *{
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:600px){
+  header h1{ font-size:32px; }
+  .container{ margin:40px auto; }
+  #theme-toggle{ position:static; margin-top:20px; display:inline-block; }
+}
+
+/* ================= IMPRESSION ================= */
+@media print{
+  header{ border:none; }
+  .card{ background-image:none !important; }
+  .card a::after{ display:none; }
+  #theme-toggle, .search-wrap{ display:none; }
+}
