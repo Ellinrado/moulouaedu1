@@ -1079,3 +1079,84 @@ html{
     border-top:8px solid #e67e22;
 
 }
+/*=============================================
+        PAGE EXERCICES
+=============================================*/
+
+.container-full{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px;
+
+}
+
+.chapter{
+
+    background:white;
+
+    margin-bottom:25px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.chapter:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.chapter summary{
+
+    cursor:pointer;
+
+    padding:22px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    background:#f7f7f7;
+
+    color:#2c3e50;
+
+}
+
+.chapter-body{
+
+    padding:25px;
+
+}
+
+.download{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 25px;
+
+    background:#2e8b57;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+}
+
+.download:hover{
+
+    background:#256d46;
+
+}
