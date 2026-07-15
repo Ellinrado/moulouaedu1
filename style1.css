@@ -1004,3 +1004,78 @@ html{
     scroll-behavior:smooth;
 
 }
+/*====================================================
+        STYLE DES CHAPITRES
+====================================================*/
+
+.card{
+
+    border-top:6px solid var(--vert);
+
+}
+
+.card h2{
+
+    font-size:24px;
+
+    line-height:1.4;
+
+    min-height:70px;
+
+}
+
+.card p{
+
+    min-height:60px;
+
+    margin-bottom:20px;
+
+}
+
+.card .btn{
+
+    width:100%;
+
+    text-align:center;
+
+    display:block;
+
+    margin-top:10px;
+
+}
+
+/*====================================================
+        COULEURS DES DOMAINES
+====================================================*/
+
+/* Activités numériques */
+
+.numerique .card{
+
+    border-top:8px solid #3498db;
+
+}
+
+/* Activités algébriques */
+
+.algebre .card{
+
+    border-top:8px solid #9b59b6;
+
+}
+
+/* Activités géométriques */
+
+.geometrie .card{
+
+    border-top:8px solid #27ae60;
+
+}
+
+/* Activités statistiques */
+
+.statistique .card{
+
+    border-top:8px solid #e67e22;
+
+}
