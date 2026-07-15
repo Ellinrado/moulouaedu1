@@ -1,78 +1,284 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les Mathématiques pour Tous</title>
+
+    <title>MoulouaEdu - Les Mathématiques pour Tous</title>
+
+    <!-- Police Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Feuille de style -->
     <link rel="stylesheet" href="style1.css">
+
 </head>
-<script src="script.js"></script>
+
 <body>
-<header>
-    <h1>Les Mathématiques pour Tous</h1>
-    <p>Collège • Lycée • Université</p>
-</header>
-<div class="container">
-    <!-- ================= COLLEGE ================= -->
-    <section class="card">
-        <h2>📘 Collège</h2>
-        <ul>
-            <li>
-                <a href="cours_college.html">
-                    📖 Cours
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <h1>MoulouaEdu</h1>
+            <p>Les Mathématiques pour Tous</p>
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Accueil</a></li>
+
+                <li><a href="cours_college.html">Collège</a></li>
+
+                <li><a href="cours_lycee.html">Lycée</a></li>
+
+                <li><a href="cours_universite.html">Université</a></li>
+
+                <li><a href="#">À propos</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Bienvenue sur MoulouaEdu</h2>
+
+            <p>
+
+                Apprenez les mathématiques du collège jusqu'à
+                l'université grâce à des cours, des exercices,
+                des examens et des quiz interactifs.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#niveaux" class="btn">Commencer</a>
+
+                <a href="#ressources" class="btn btn-secondaire">
+                    Explorer les ressources
                 </a>
-            </li>
-            <li>
-                <a href="exercice_1APIC.html">
-                    📝 Exercices
-                </a>
-            </li>
-            <li>
-                <a href="examens_college.html">
-                    🎯 Examens Blancs
-                </a>
-            </li>
-        </ul>
+
+            </div>
+
+        </div>
+
     </section>
-    <!-- ================= LYCEE ================= -->
-    <section class="card">
-        <h2>📙 Lycée</h2>
-        <ul>
-            <li>
-                <a href="#">
-                    📖 Cours
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    📝 Exercices
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    🎯 Examens Blancs
-                </a>
-            </li>
-        </ul>
+
+    <!-- ================= NIVEAUX ================= -->
+
+    <section id="niveaux">
+
+        <h2 class="titre-section">Nos niveaux</h2>
+
+        <div class="container">
+
+            <!-- Collège -->
+
+            <section class="card">
+
+                <h2>📘 Collège</h2>
+
+                <ul>
+
+                    <li>
+                        <a href="cours_college.html">
+                            📖 Cours
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="exercice_1APIC.html">
+                            📝 Exercices
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="examens_college.html">
+                            🎯 Examens
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <!-- Lycée -->
+
+            <section class="card">
+
+                <h2>📙 Lycée</h2>
+
+                <ul>
+
+                    <li><a href="cours_lycee.html">📖 Cours</a></li>
+
+                    <li><a href="#">📝 Exercices</a></li>
+
+                    <li><a href="#">🎯 Examens</a></li>
+
+                </ul>
+
+            </section>
+
+            <!-- Université -->
+
+            <section class="card">
+
+                <h2>🎓 Université</h2>
+
+                <ul>
+
+                    <li><a href="cours_Algèbre.html">📚 Algèbre</a></li>
+
+                    <li><a href="#">📈 Analyse</a></li>
+
+                    <li><a href="#">📊 Probabilités</a></li>
+
+                    <li><a href="#">📉 Statistiques</a></li>
+
+                </ul>
+
+            </section>
+
+        </div>
+
     </section>
-    <!-- ================= UNIVERSITE ================= -->
-    <section class="card">
-        <h2>🎓 Université</h2>
-        <ul>
-            <li><a href="cours_Algèbre.html">📚 Algèbre</a></li>
-            <li><a href="#">📈 Analyse</a></li>
-            <li><a href="#">📊 Probabilités</a></li>
-            <li><a href="#">📉 Statistiques</a></li>
-        </ul>
+
+    <!-- ================= RESSOURCES ================= -->
+
+    <section id="ressources">
+
+        <h2 class="titre-section">
+
+            Ressources pédagogiques
+
+        </h2>
+
+        <div class="container">
+
+            <div class="card">
+
+                <h3>📚 Cours</h3>
+
+                <p>
+                    Des cours complets et organisés.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>📝 Exercices</h3>
+
+                <p>
+                    Des exercices progressifs avec correction.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>🎯 Examens</h3>
+
+                <p>
+                    Examens nationaux et examens blancs.
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
-</div>
-<footer>
-    <p>© 2026 - Les Mathématiques pour Tous</p>
-    <!-- ⬇️ COMPTEUR DE VISITEURS ⬇️ -->
-    <p class="compteur">
-        👀 Nombre de visiteurs :
-        <img src="https://api.visitorbadge.io/api/visitors?path=mouloua-maths-2026&label=Visites&countColor=%23263759" alt="compteur de visiteurs" />
-    </p>
-</footer>
+
+    <!-- ================= STATISTIQUES ================= -->
+
+    <section class="statistiques">
+
+        <div class="stat">
+
+            <h2>100+</h2>
+
+            <p>Cours</p>
+
+        </div>
+
+        <div class="stat">
+
+            <h2>500+</h2>
+
+            <p>Exercices</p>
+
+        </div>
+
+        <div class="stat">
+
+            <h2>1000+</h2>
+
+            <p>Questions</p>
+
+        </div>
+
+        <div class="stat">
+
+            <h2>100%</h2>
+
+            <p>Gratuit</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>MoulouaEdu</h3>
+
+        <p>
+
+            Les Mathématiques pour Tous
+
+        </p>
+
+        <p>
+
+            © 2026 - Tous droits réservés
+
+        </p>
+
+        <p class="compteur">
+
+            👀 Nombre de visiteurs
+
+            <br><br>
+
+            <img src="https://api.visitorbadge.io/api/visitors?path=mouloua-maths-2026&label=Visites&countColor=%23263759"
+                alt="Compteur">
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
