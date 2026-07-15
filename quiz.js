@@ -68,3 +68,4 @@ function renderQuiz(containerId, questions) {
 
   build();
 }
+console.log("Quiz chargé avec succès");
