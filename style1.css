@@ -1160,3 +1160,185 @@ html{
     background:#256d46;
 
 }
+/*======================================================
+                QUIZ MODERNE
+======================================================*/
+
+.quiz{
+    max-width:900px;
+    margin:40px auto;
+}
+
+.quiz-question{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    border-left:8px solid #7BA05B;
+
+    animation:fadeIn .4s;
+}
+
+.quiz-q-text{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#2d3a28;
+
+    margin-bottom:30px;
+
+    line-height:1.6;
+}
+
+.quiz-options{
+
+    display:grid;
+
+    gap:18px;
+}
+
+.quiz-option{
+
+    background:#fafafa;
+
+    border:2px solid #d8d8d8;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    text-align:left;
+}
+
+.quiz-option:hover{
+
+    background:#eef6e8;
+
+    border-color:#7BA05B;
+
+    transform:translateX(8px);
+}
+
+.quiz-option.selected{
+
+    background:#7BA05B;
+
+    color:white;
+
+    border-color:#7BA05B;
+
+    font-weight:bold;
+}
+
+.correct{
+
+    color:#2e8b57;
+
+    font-weight:bold;
+
+    margin-top:18px;
+
+    font-size:18px;
+}
+
+.incorrect{
+
+    color:#c62828;
+
+    font-weight:bold;
+
+    margin-top:18px;
+
+    font-size:18px;
+}
+
+.quiz-submit{
+
+    width:100%;
+
+    padding:18px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    background:#7BA05B;
+
+    color:white;
+
+    margin-top:30px;
+
+    transition:.3s;
+}
+
+.quiz-submit:hover{
+
+    background:#62884b;
+
+    transform:scale(1.02);
+}
+
+.quiz-score{
+
+    margin-top:35px;
+
+    background:#f7fbf5;
+
+    border-left:8px solid #7BA05B;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    display:none;
+}
+
+.quiz-score.visible{
+
+    display:block;
+
+    animation:fadeIn .5s;
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
