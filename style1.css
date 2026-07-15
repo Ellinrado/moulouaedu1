@@ -1,556 +1,1006 @@
-/* =====================================================
-   LES MATHÉMATIQUES POUR TOUS
-   Style académique — inspiré des pages de couverture
-   de revues scientifiques et des manuels scolaires.
-   ===================================================== */
+/*====================================================
+    MOULOUAEDU
+    Feuille de style principale
+====================================================*/
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
-
-:root{
-  --paper:      #FAFAF7;
-  --paper-alt:  #F1EEE4;
-  --ink:        #1E2A38;
-  --ink-soft:   #5B6B7A;
-  --accent:     #7A2E2E;
-  --rule:       #D8D3C4;
-  --rule-dark:  #1E2A38;
-}
-
-[data-theme="dark"]{
-  --paper:      #14181F;
-  --paper-alt:  #1C222C;
-  --ink:        #EDE9E0;
-  --ink-soft:   #9BA6B2;
-  --accent:     #C97B7B;
-  --rule:       #2B323D;
-  --rule-dark:  #EDE9E0;
-}
+/*==============================
+    RESET
+==============================*/
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+/*==============================
+    VARIABLES
+==============================*/
+
+:root{
+
+    --vert:#7BA05B;
+    --vert-fonce:#5E7E46;
+    --vert-clair:#A8C686;
+
+    --beige:#F7F7F2;
+    --cafe:#D8C3A5;
+
+    --blanc:#ffffff;
+
+    --gris:#555;
+    --gris-fonce:#333;
+
+    --ombre:0 10px 30px rgba(0,0,0,.12);
+
+    --transition:.35s;
+
 }
+
+/*==============================
+    BODY
+==============================*/
 
 body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:"Inter", Arial, sans-serif;
-  font-size:16px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  transition:background .25s ease, color .25s ease;
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--beige);
+
+    color:var(--gris-fonce);
+
+    line-height:1.7;
+
 }
 
-/* ================= HEADER / MASTHEAD ================= */
+/*==============================
+    LIENS
+==============================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/*==============================
+    IMAGES
+==============================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/*==============================
+    HEADER
+==============================*/
+
 header{
-  background:var(--paper);
-  color:var(--ink);
-  padding:56px 20px 40px;
-  text-align:center;
-  border-top:6px solid var(--rule-dark);
-  border-bottom:1px solid var(--rule-dark);
-  position:relative;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
 }
 
-header::before{
-  content:"Manuel numérique";
-  display:block;
-  font-family:"Inter", sans-serif;
-  font-size:12px;
-  font-weight:600;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:18px;
+/*==============================
+    LOGO
+==============================*/
+
+.logo h1{
+
+    color:var(--vert);
+
+    font-size:34px;
+
+    font-weight:700;
+
 }
 
-header h1{
-  font-family:"Lora", Georgia, serif;
-  font-weight:700;
-  font-size:44px;
-  letter-spacing:0.3px;
-  margin-bottom:14px;
+.logo p{
+
+    color:var(--gris);
+
+    font-size:14px;
+
 }
 
-header p{
-  font-family:"Inter", sans-serif;
-  font-size:14px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:var(--ink-soft);
+/*==============================
+    MENU
+==============================*/
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:30px;
+
 }
 
-header p::after{
-  content:"";
-  display:block;
-  width:60px;
-  height:3px;
-  background:var(--accent);
-  margin:18px auto 0;
+nav a{
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+    position:relative;
+
 }
 
-/* ================= BOUTON MODE SOMBRE ================= */
-#theme-toggle{
-  position:absolute;
-  top:24px;
-  right:24px;
-  background:none;
-  border:1px solid var(--rule-dark);
-  color:var(--ink);
-  font-family:"Inter", sans-serif;
-  font-size:11px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  padding:8px 14px;
-  cursor:pointer;
-  transition:background .2s ease, color .2s ease;
+/*==============================
+    EFFET MENU
+==============================*/
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--vert);
+
+    transition:.4s;
+
 }
 
-#theme-toggle:hover{
-  background:var(--accent);
-  color:var(--paper);
-  border-color:var(--accent);
+nav a:hover{
+
+    color:var(--vert);
+
 }
 
-/* ================= FIL D'ARIANE / RETOUR ================= */
-.nav-back{
-  width:90%;
-  max-width:1100px;
-  margin:28px auto 0;
-  font-family:"Inter", sans-serif;
-  font-size:13px;
-  letter-spacing:0.5px;
+nav a:hover::after{
+
+    width:100%;
+
 }
 
-.nav-back a{
-  color:var(--ink-soft);
-  text-decoration:none;
-  border-bottom:1px solid var(--rule);
-  padding-bottom:2px;
-  transition:color .2s ease, border-color .2s ease;
+/*==============================
+    HERO
+==============================*/
+
+.hero{
+
+    min-height:85vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:50px;
+
+    background:linear-gradient(rgba(0,0,0,.45),
+    rgba(0,0,0,.45)),
+    url("images/12.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:white;
+
 }
 
-.nav-back a:hover{
-  color:var(--accent);
-  border-color:var(--accent);
+/*==============================
+    TEXTE HERO
+==============================*/
+
+.hero-content{
+
+    max-width:900px;
+
 }
 
-/* ================= BARRE DE RECHERCHE ================= */
-.search-wrap{
-  width:90%;
-  max-width:600px;
-  margin:36px auto 0;
+.hero h2{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
 }
 
-#smart-search{
-  width:100%;
-  padding:14px 18px;
-  font-family:"Inter", sans-serif;
-  font-size:14px;
-  background:var(--paper);
-  color:var(--ink);
-  border:1px solid var(--rule-dark);
-  outline:none;
-  transition:border-color .2s ease;
+.hero p{
+
+    font-size:22px;
+
+    margin-bottom:35px;
+
 }
 
-#smart-search::placeholder{
-  color:var(--ink-soft);
+/*==============================
+    BOUTONS
+==============================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
 }
 
-#smart-search:focus{
-  border-color:var(--accent);
+.btn{
+
+    background:var(--vert);
+
+    color:white;
+
+    padding:16px 38px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
 }
 
-/* ================= CONTENU ================= */
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    background:var(--vert-fonce);
+
+}
+
+.btn-secondaire{
+
+    background:white;
+
+    color:var(--vert);
+
+}
+
+.btn-secondaire:hover{
+
+    background:var(--cafe);
+
+}
+/*====================================================
+            PARTIE 2
+    Sections - Cartes - Footer
+====================================================*/
+
+/*==============================
+    TITRES DES SECTIONS
+==============================*/
+
+.titre-section{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:var(--vert-fonce);
+
+    margin-top:80px;
+
+    margin-bottom:50px;
+
+    position:relative;
+
+}
+
+.titre-section::after{
+
+    content:"";
+
+    width:90px;
+
+    height:5px;
+
+    background:var(--vert);
+
+    display:block;
+
+    margin:15px auto;
+
+    border-radius:20px;
+
+}
+
+/*==============================
+    CONTAINER
+==============================*/
+
 .container{
-  width:90%;
-  max-width:1100px;
-  margin:70px auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1px;
-  background:var(--rule);
-  border:1px solid var(--rule);
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    padding-bottom:80px;
+
 }
 
-/* ================= CARTES / CHAPITRES ================= */
+/*==============================
+    CARTES
+==============================*/
+
 .card{
-  background:var(--paper);
-  padding:40px 32px 34px;
-  position:relative;
-  overflow:hidden;
-  transition:background .25s ease;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:var(--ombre);
+
+    transition:.4s;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:8px;
+
+    background:var(--vert);
+
 }
 
 .card:hover{
-  background:var(--paper-alt);
+
+    transform:translateY(-12px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+
 }
 
-.card{
-  background-image:
-    linear-gradient(rgba(250,250,247,0.72), rgba(250,250,247,0.72)),
-    url("images/college1.png");
-  background-size:cover;
-  background-position:center;
-}
-
-[data-theme="dark"] .card{
-  background-image:
-    linear-gradient(rgba(20,24,31,0.82), rgba(20,24,31,0.82)),
-    url("images/college1.png");
-}
-
-.card:hover{
-  background-image:
-    linear-gradient(rgba(241,238,228,0.65), rgba(241,238,228,0.65)),
-    url("images/maths.svg");
-}
-
-[data-theme="dark"] .card:hover{
-  background-image:
-    linear-gradient(rgba(28,34,44,0.85), rgba(28,34,44,0.85)),
-    url("images/maths.svg");
-}
+/*==============================
+    TITRES DES CARTES
+==============================*/
 
 .card h2{
-  font-family:"Lora", Georgia, serif;
-  font-weight:600;
-  font-size:23px;
-  color:var(--ink);
-  text-align:left;
-  margin-bottom:8px;
-  position:relative;
-  z-index:1;
+
+    color:var(--vert-fonce);
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
 }
 
-.card p.chapitre-label{
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:22px;
+.card h3{
+
+    color:var(--vert-fonce);
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
 }
+
+/*==============================
+    LISTES
+==============================*/
 
 .card ul{
-  list-style:none;
-  position:relative;
-  z-index:1;
+
+    list-style:none;
+
 }
 
 .card li{
-  margin:0;
-  border-bottom:1px solid var(--rule);
+
+    margin-bottom:18px;
+
 }
 
-.card li:last-child{
-  border-bottom:none;
-}
+/*==============================
+    LIENS
+==============================*/
 
 .card a{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  text-decoration:none;
-  color:var(--ink);
-  font-family:"Inter", sans-serif;
-  font-weight:500;
-  font-size:15px;
-  padding:14px 4px;
-  transition:color .2s ease, padding-left .2s ease;
-}
 
-.card a::after{
-  content:"→";
-  color:var(--accent);
-  font-size:16px;
-  opacity:0;
-  transition:opacity .2s ease;
+    display:block;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    color:var(--gris-fonce);
+
+    font-weight:500;
+
 }
 
 .card a:hover{
-  color:var(--accent);
-  padding-left:8px;
+
+    background:var(--vert);
+
+    color:white;
+
+    padding-left:22px;
+
 }
 
-.card a:hover::after{
-  opacity:1;
+/*==============================
+    PARAGRAPHES
+==============================*/
+
+.card p{
+
+    color:var(--gris);
+
 }
 
-.card a:focus-visible,
-#smart-search:focus-visible,
-#theme-toggle:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:2px;
+/*==============================
+    SECTION RESSOURCES
+==============================*/
+
+#ressources{
+
+    padding:40px 0 80px;
+
+    background:#fdfdfd;
+
 }
 
-/* ================= PAGE DE CHAPITRE (sous-pages) ================= */
-main.page{
-  width:90%;
-  max-width:800px;
-  margin:60px auto 80px;
+/*==============================
+    STATISTIQUES
+==============================*/
+
+.statistiques{
+
+    background:linear-gradient(135deg,var(--vert),var(--vert-fonce));
+
+    color:white;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    padding:80px 10%;
+
+    text-align:center;
+
 }
 
-main.page h2{
-  font-family:"Lora", Georgia, serif;
-  font-weight:700;
-  font-size:30px;
-  margin-bottom:8px;
+.stat h2{
+
+    font-size:55px;
+
+    margin-bottom:10px;
+
 }
 
-main.page p.chapitre-label{
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:30px;
+.stat p{
+
+    font-size:20px;
+
 }
 
-main.page .item{
-  border:1px solid var(--rule);
-  padding:22px 26px;
-  margin-bottom:14px;
-  background:var(--paper-alt);
-}
+/*==============================
+    FOOTER
+==============================*/
 
-main.page .item h3{
-  font-family:"Lora", Georgia, serif;
-  font-size:17px;
-  margin-bottom:6px;
-}
-
-main.page .item p{
-  font-size:14px;
-  color:var(--ink-soft);
-  margin-bottom:10px;
-}
-
-main.page .item a.download{
-  display:inline-block;
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:0.5px;
-  text-transform:uppercase;
-  color:var(--accent);
-  text-decoration:none;
-  border-bottom:1px solid var(--accent);
-}
-
-/* ================= CHAPITRES DÉPLIABLES (accordéon) ================= */
-.container-full{
-  width:90%;
-  max-width:800px;
-  margin:60px auto 80px;
-}
-
-.chapter{
-  border:1px solid var(--rule);
-  margin-bottom:14px;
-  background:var(--paper-alt);
-}
-
-.chapter summary{
-  cursor:pointer;
-  list-style:none;
-  padding:18px 24px;
-  font-family:"Lora", Georgia, serif;
-  font-size:17px;
-  font-weight:600;
-  color:var(--ink);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.chapter summary::-webkit-details-marker{
-  display:none;
-}
-
-.chapter summary::after{
-  content:"+";
-  font-size:20px;
-  color:var(--accent);
-  transition:transform .2s ease;
-}
-
-.chapter[open] summary::after{
-  content:"–";
-}
-
-.chapter summary:hover{
-  color:var(--accent);
-}
-
-.chapter-body{
-  padding:0 24px 24px;
-  border-top:1px solid var(--rule);
-}
-
-.chapter-body a.download{
-  display:inline-block;
-  margin-top:18px;
-  font-family:"Inter", sans-serif;
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:0.5px;
-  color:var(--accent);
-  text-decoration:none;
-  border-bottom:1px solid var(--accent);
-}
-
-/* ================= QUIZ INTERACTIF ================= */
-.quiz{
-  margin-top:18px;
-}
-
-.quiz-question{
-  margin-bottom:22px;
-  padding-bottom:18px;
-  border-bottom:1px solid var(--rule);
-}
-
-.quiz-question:last-of-type{
-  border-bottom:none;
-}
-
-.quiz-q-text{
-  font-family:"Lora", Georgia, serif;
-  font-size:15px;
-  margin-bottom:10px;
-  color:var(--ink);
-}
-
-.quiz-options{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.quiz-option{
-  font-family:"Inter", sans-serif;
-  font-size:13px;
-  padding:9px 14px;
-  background:var(--paper);
-  color:var(--ink);
-  border:1px solid var(--rule-dark);
-  cursor:pointer;
-  transition:background .2s ease, color .2s ease;
-}
-
-.quiz-option:hover{
-  background:var(--paper-alt);
-}
-
-.quiz-option.selected{
-  background:var(--accent);
-  color:var(--paper);
-  border-color:var(--accent);
-}
-
-.quiz-feedback{
-  margin-top:8px;
-  font-size:13px;
-  min-height:18px;
-}
-
-.quiz-feedback.correct{
-  color:#2E7D32;
-}
-
-.quiz-feedback.incorrect{
-  color:var(--accent);
-}
-
-.quiz-submit{
-  margin-top:8px;
-  font-family:"Inter", sans-serif;
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:0.5px;
-  text-transform:uppercase;
-  padding:12px 22px;
-  background:var(--ink);
-  color:var(--paper);
-  border:none;
-  cursor:pointer;
-  transition:background .2s ease;
-}
-
-.quiz-submit:hover{
-  background:var(--accent);
-}
-
-.quiz-score{
-  margin-top:14px;
-  font-family:"Lora", Georgia, serif;
-  font-size:17px;
-  font-weight:600;
-  opacity:0;
-  height:0;
-  overflow:hidden;
-  transition:opacity .3s ease;
-}
-
-.quiz-score.visible{
-  opacity:1;
-  height:auto;
-}
-
-/* ================= FOOTER / COLOPHON ================= */
 footer{
-  margin-top:40px;
-  background:var(--paper);
-  color:var(--ink-soft);
-  text-align:center;
-  padding:30px 20px;
-  border-top:1px solid var(--rule-dark);
-  font-size:12px;
-  letter-spacing:1px;
+
+    background:#222;
+
+    color:white;
+
+    text-align:center;
+
+    padding:60px 20px;
+
 }
 
-/* ================= COMPTEUR DE VISITEURS ================= */
-.compteur{
-  margin-top:16px;
-  font-family:"Inter", sans-serif;
-  font-size:12px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:var(--ink-soft);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
+footer h3{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+    color:var(--vert-clair);
+
+}
+
+footer p{
+
+    margin:12px 0;
+
 }
 
 .compteur img{
-  vertical-align:middle;
-  filter:grayscale(0.2);
+
+    margin:auto;
+
+    margin-top:20px;
+
 }
 
-/* ================= ACCESSIBILITÉ & CONFORT ================= */
-@media (prefers-reduced-motion: reduce){
-  *{
-    transition:none !important;
-    scroll-behavior:auto !important;
-  }
+/*==============================
+    SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width:600px){
-  header h1{ font-size:32px; }
-  .container{ margin:40px auto; }
-  #theme-toggle{ position:static; margin-top:20px; display:inline-block; }
+::-webkit-scrollbar-track{
+
+    background:#efefef;
+
 }
 
-/* ================= IMPRESSION ================= */
-@media print{
-  header{ border:none; }
-  .card{ background-image:none !important; }
-  .card a::after{ display:none; }
-  #theme-toggle, .search-wrap{ display:none; }
+::-webkit-scrollbar-thumb{
+
+    background:var(--vert);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--vert-fonce);
+
+}
+/*====================================================
+                PARTIE 3
+     Responsive - Animations - Effets modernes
+====================================================*/
+
+/*==============================
+    ANIMATIONS
+==============================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes zoom{
+
+    from{
+
+        transform:scale(.9);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==============================
+    APPLICATION DES ANIMATIONS
+==============================*/
+
+.hero-content{
+
+    animation:fadeUp 1s ease;
+
+}
+
+.card{
+
+    animation:zoom .8s ease;
+
+}
+
+.stat{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+/*==============================
+    EFFETS BOUTONS
+==============================*/
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+
+}
+
+.btn:hover::before{
+
+    left:120%;
+
+}
+
+/*==============================
+    LOGO
+==============================*/
+
+.logo{
+
+    animation:float 4s infinite ease-in-out;
+
+}
+
+/*==============================
+    TITRES
+==============================*/
+
+.hero h2{
+
+    text-shadow:3px 3px 10px rgba(0,0,0,.3);
+
+}
+
+.titre-section{
+
+    letter-spacing:1px;
+
+}
+
+/*==============================
+    HOVER DES CARTES
+==============================*/
+
+.card:hover h2{
+
+    color:var(--vert);
+
+}
+
+.card:hover h3{
+
+    color:var(--vert);
+
+}
+
+/*==============================
+    ICÔNES
+==============================*/
+
+.card li{
+
+    transition:.3s;
+
+}
+
+.card li:hover{
+
+    transform:translateX(6px);
+
+}
+
+/*==============================
+    FOOTER
+==============================*/
+
+footer{
+
+    border-top:6px solid var(--vert);
+
+}
+
+/*==============================
+    MOBILE
+==============================*/
+
+@media(max-width:992px){
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:20px;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+.hero{
+
+    min-height:70vh;
+
+    padding:40px 20px;
+
+}
+
+.hero h2{
+
+    font-size:42px;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+}
+
+}
+
+/*==============================
+    TABLETTE
+==============================*/
+
+@media(max-width:768px){
+
+.hero h2{
+
+    font-size:34px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.titre-section{
+
+    font-size:34px;
+
+}
+
+.logo h1{
+
+    font-size:30px;
+
+}
+
+}
+
+/*==============================
+    TELEPHONE
+==============================*/
+
+@media(max-width:480px){
+
+header{
+
+    padding:15px;
+
+}
+
+.logo h1{
+
+    font-size:26px;
+
+}
+
+.logo p{
+
+    font-size:12px;
+
+}
+
+nav ul{
+
+    gap:12px;
+
+}
+
+nav a{
+
+    font-size:14px;
+
+}
+
+.hero{
+
+    min-height:60vh;
+
+}
+
+.hero h2{
+
+    font-size:28px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.container{
+
+    width:95%;
+
+}
+
+.card{
+
+    padding:25px;
+
+}
+
+.stat h2{
+
+    font-size:40px;
+
+}
+
+.stat p{
+
+    font-size:16px;
+
+}
+
+footer h3{
+
+    font-size:28px;
+
+}
+
+}
+
+/*==============================
+    SELECTION TEXTE
+==============================*/
+
+::selection{
+
+    background:var(--vert);
+
+    color:white;
+
+}
+
+/*==============================
+    SMOOTH SCROLL
+==============================*/
+
+html{
+
+    scroll-behavior:smooth;
+
 }
