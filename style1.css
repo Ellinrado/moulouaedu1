@@ -19,24 +19,31 @@
 
 :root{
 
-    --vert:#7BA05B;
-    --vert-fonce:#5E7E46;
-    --vert-clair:#A8C686;
+  /* Fond */
 
-    --beige:#F7F7F2;
-    --cafe:#D8C3A5;
+  --paper:#FCFBF7;
 
-    --blanc:#ffffff;
+  --paper-alt:#F5F2EA;
 
-    --gris:#555;
-    --gris-fonce:#333;
+  /* Texte */
 
-    --ombre:0 10px 30px rgba(0,0,0,.12);
+  --ink:#1F2D3D;
 
-    --transition:.35s;
+  --ink-soft:#64748B;
+
+  /* Couleur principale */
+
+  --accent:#B89230;
+
+  /* Couleur au survol */
+
+  --accent-dark:#97741F;
+
+  /* Bordures */
+
+  --rule:#DDD6C6;
 
 }
-
 /*==============================
     BODY
 ==============================*/
@@ -365,22 +372,17 @@ nav a:hover::after{
 
 .card{
 
-    background:white;
+  background:white;
 
-    border-radius:18px;
+  padding:35px;
 
-    padding:35px;
+  border-radius:18px;
 
-    box-shadow:var(--ombre);
+  box-shadow:0 8px 30px rgba(0,0,0,.06);
 
-    transition:.4s;
-
-    overflow:hidden;
-
-    position:relative;
+  transition:.3s;
 
 }
-
 .card::before{
 
     content:"";
@@ -401,9 +403,9 @@ nav a:hover::after{
 
 .card:hover{
 
-    transform:translateY(-12px);
+    transform:translateY(-8px);
 
-    box-shadow:0 18px 40px rgba(0,0,0,.18);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
 
 }
 
@@ -468,13 +470,8 @@ nav a:hover::after{
 }
 
 .card a:hover{
-
-    background:var(--vert);
-
-    color:white;
-
-    padding-left:22px;
-
+  color:var(--accent);
+  padding-left:15px;
 }
 
 /*==============================
@@ -1340,5 +1337,42 @@ opacity:1;
 transform:translateY(0);
 
 }
+
+}
+/*==================================================
+                BOUTONS
+==================================================*/
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    background:var(--accent);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+.btn:hover{
+
+    background:var(--accent-dark);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(184,146,48,.25);
 
 }
