@@ -761,7 +761,7 @@ nav ul{
     font-size:32px;
 
 }
-
+grid-template-columns:1fr;
 }
 
 @media(max-width:480px){
