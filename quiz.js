@@ -27,7 +27,7 @@ function renderQuiz(containerId, questions) {
       html += '</div>';
     });
     html += '</div>';
-    html += '<button type="button" id="' + containerId + '-submit" class="quiz-submit">🎯 Terminer le quiz</button>';
+    html += '<button type="button" id="' + containerId + '-submit" class="quiz-submit">Valider mes réponses</button>';
     html += '<p class="quiz-score" id="' + containerId + '-score"></p>';
     container.innerHTML = html;
 
